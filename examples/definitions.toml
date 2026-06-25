@@ -1,0 +1,31 @@
+# ==========================================
+# TinyRom ECU Definition File
+# ==========================================
+
+[tables.primary_fuel]
+address = "0x8A00"
+shape = [16, 16]
+datatype = "u1"
+factor = 0.0078125      # Fuel conversion factor
+offset = 0.0
+
+[tables.base_ignition]
+address = "0x8B00"
+shape = [16, 16]
+datatype = "u1"
+factor = 0.25           # Each raw bit equals 0.25 degrees of timing
+offset = -20.0          # Shift to allow for negative timing
+
+[tables.rpm_axis]
+address = "0x89E0"
+shape = [1, 16]         # 1D array (1 row, 16 columns)
+datatype = "u2"         # Unsigned 16-bit integer (needs to hold values up to 12,000+ RPM)
+factor = 1.0
+offset = 0.0
+
+[tables.rev_limiter]
+address = "0x8012"
+shape = [1, 1]          # Single scalar value
+datatype = "u2"
+factor = 1.0
+offset = 0.0

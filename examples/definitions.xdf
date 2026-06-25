@@ -1,0 +1,74 @@
+<!-- Synthetic TunerPro XDF fixture matching examples/definitions.toml (not a real ECU definition) -->
+<XDFFORMAT version="1.60">
+  <XDFHEADER>
+    <flags>0x0</flags>
+    <deftitle>EXAMPLE-ECU-0001</deftitle>
+    <BASEOFFSET offset="0" subtract="0" />
+    <DEFAULTS datasizeinbits="8" sigdigits="2" outputtype="1" signed="0" lsbfirst="1" float="0" />
+    <REGION type="0xFFFFFFFF" startaddress="0x0" size="0xFFFF" regionflags="0x0" name="Binary File" desc="Synthetic example ROM region" />
+    <CATEGORY index="0x0" name="Fuel" />
+    <CATEGORY index="0x1" name="Ignition" />
+    <CATEGORY index="0x2" name="Axes" />
+    <CATEGORY index="0x3" name="Limiter" />
+  </XDFHEADER>
+  <XDFTABLE uniqueid="0x0001" flags="0x30">
+    <title>Primary Fuel</title>
+    <CATEGORYMEM index="0" category="0" />
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x8A00" mmedelementsizebits="8" mmedrowcount="16" mmedcolcount="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>ms</units>
+      <decimalpl>3</decimalpl>
+      <min>0.000000</min>
+      <max>1.992188</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X*0.0078125">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x0002" flags="0x30">
+    <title>Base Ignition</title>
+    <CATEGORYMEM index="0" category="1" />
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x8B00" mmedelementsizebits="8" mmedrowcount="16" mmedcolcount="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>deg</units>
+      <decimalpl>2</decimalpl>
+      <min>-20.000000</min>
+      <max>43.750000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X*0.25-20">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x0003" flags="0x30">
+    <title>RPM Axis</title>
+    <CATEGORYMEM index="0" category="2" />
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x89E0" mmedelementsizebits="16" mmedrowcount="1" mmedcolcount="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>RPM</units>
+      <decimalpl>0</decimalpl>
+      <min>0.000000</min>
+      <max>15000.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x0004" flags="0x30">
+    <title>Rev Limiter</title>
+    <CATEGORYMEM index="0" category="3" />
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x8012" mmedelementsizebits="16" mmedrowcount="1" mmedcolcount="1" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>RPM</units>
+      <decimalpl>0</decimalpl>
+      <min>0.000000</min>
+      <max>15000.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+</XDFFORMAT>

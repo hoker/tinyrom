@@ -1,0 +1,18 @@
+[project]
+name = "tinyrom"
+version = "0.1.0"
+description = "Brutalist, math-first ROM calibration core and XDF-to-TOML tooling"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24"]
+
+[project.scripts]
+tinyrom-xdf2toml = "tinyrom.xdf:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
